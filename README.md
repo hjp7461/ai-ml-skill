@@ -1,25 +1,25 @@
-# ai-ml-skill
+# conners-market
 
 > **Built with Claude Code** — `ai-ml-toolkit` 플러그인(by Daniel Avila)의 5개 에이전트를
 > **하나의 스킬 커맨드**로 재설계한 Claude Code 플러그인입니다.
 
 ```
-ai-ml-toolkit (agents)          →    ai-ml-engineer (skill)
-┌─────────────────────────┐          ┌─────────────────────────────┐
-│  ai-engineer agent      │          │                             │
-│  ml-engineer agent      │   ──→    │  /ai-ml-engineer <domain>   │
-│  nlp-engineer agent     │          │                             │
-│  cv-engineer agent      │          │  단일 커맨드로 도메인 자동  │
-│  mlops-engineer agent   │          │  감지 & 전문가 페르소나 적용│
-└─────────────────────────┘          └─────────────────────────────┘
+ai-ml-toolkit (agents)          →    ai-ml-skill (skill)
+┌─────────────────────────┐          ┌──────────────────────────┐
+│  ai-engineer agent      │          │                          │
+│  ml-engineer agent      │   ──→    │  /ai-ml-skill <domain>   │
+│  nlp-engineer agent     │          │                          │
+│  cv-engineer agent      │          │  단일 커맨드로 도메인    │
+│  mlops-engineer agent   │          │  자동 감지 & 전문가 적용 │
+└─────────────────────────┘          └──────────────────────────┘
 ```
 
 ## What Changed
 
-| | ai-ml-toolkit (원본) | ai-ml-engineer (스킬) |
+| | ai-ml-toolkit (원본) | ai-ml-skill (스킬) |
 |---|---|---|
 | **구조** | 5개 개별 에이전트 | 1개 통합 스킬 커맨드 |
-| **호출** | Task 에이전트 선택 | `/ai-ml-engineer rag ...` |
+| **호출** | Task 에이전트 선택 | `/ai-ml-skill rag ...` |
 | **도메인 선택** | 수동 에이전트 지정 | 키워드 기반 자동 감지 |
 | **도구** | Read, Write, Edit, Bash | + WebSearch, WebFetch, Grep, Glob, Task |
 | **출처** | davila7/claude-code-templates | hjp7461/ai-ml-skill |
@@ -42,43 +42,43 @@ ai-ml-toolkit (agents)          →    ai-ml-engineer (skill)
 /plugin marketplace add hjp7461/ai-ml-skill
 
 # 2. 플러그인 설치
-/plugin install ai-ml-engineer@ai-ml-skill
+/plugin install ai-ml-skill@conners-market
 ```
 
 ## 사용법
 
 ```bash
 # RAG 시스템 구축
-/ai-ml-engineer rag PDF 문서 기반 RAG 파이프라인 구현
+/ai-ml-skill rag PDF 문서 기반 RAG 파이프라인 구현
 
 # ML 모델 서빙
-/ai-ml-engineer ml ONNX 모델 서빙 API 구축
+/ai-ml-skill ml ONNX 모델 서빙 API 구축
 
 # NLP 텍스트 분류
-/ai-ml-engineer nlp 고객 리뷰 감성 분석 파이프라인
+/ai-ml-skill nlp 고객 리뷰 감성 분석 파이프라인
 
 # 컴퓨터 비전
-/ai-ml-engineer cv YOLOv8 기반 실시간 객체 탐지
+/ai-ml-skill cv YOLOv8 기반 실시간 객체 탐지
 
 # MLOps 인프라
-/ai-ml-engineer mlops MLflow 실험 추적 + SageMaker 배포 파이프라인
+/ai-ml-skill mlops MLflow 실험 추적 + SageMaker 배포 파이프라인
 
 # 도메인 자동 감지 (키워드 없이)
-/ai-ml-engineer 추천 시스템 설계해줘
+/ai-ml-skill 추천 시스템 설계해줘
 ```
 
 ## 디렉토리 구조
 
 ```
-ai-ml-skill/
+conners-market/
 ├── .claude-plugin/
 │   └── marketplace.json          ← 마켓플레이스 메타데이터
 ├── plugins/
-│   └── ai-ml-engineer/
+│   └── ai-ml-skill/
 │       ├── .claude-plugin/
 │       │   └── plugin.json       ← 플러그인 메타데이터
 │       └── commands/
-│           └── ai-ml-engineer.md ← 스킬 커맨드 정의
+│           └── ai-ml-skill.md    ← 스킬 커맨드 정의
 ├── .gitignore
 └── README.md
 ```

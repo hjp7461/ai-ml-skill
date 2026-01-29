@@ -1,14 +1,14 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "ai-ml-skill",
+  "name": "conners-market",
   "description": "Custom Claude Code skill plugins",
   "owner": {
     "name": "hjp7461"
   },
   "plugins": [
     {
-      "name": "ai-ml-engineer",
-      "source": "./plugins/ai-ml-engineer",
+      "name": "ai-ml-skill",
+      "source": "./plugins/ai-ml-skill",
       "description": "AI/ML engineering specialist - supports rag, llm, ml, nlp, cv, mlops domains",
       "version": "1.0.0",
       "author": { "name": "hjp7461" }
